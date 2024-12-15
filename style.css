@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: aliceblue;
+    background-color: black;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full viewport height */
+    width: 100%;
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
+}
+
+ 
+.right {
+    width: 100%;
+    /* Default for larger screens */
+    height: 100%;
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Stack content vertically */
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    /* Default font size for larger screens */
+    margin-bottom: 15px;
+}
+
+iframe {
+    width: 100%;
+    /* Full width of the .right section */
+    height: 50%;
+    /* Default height for larger screens */
+    border: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        /* Stack sections vertically */
+        height: auto;
+        /* Allow height to adjust to content */
+    }
+
+    .right {
+        order: 1;
+        /* Show iframe first */
+        width: 100%;
+        /* Full width on mobile */
+        height: 100vh;
+        /* Make iframe cover the full screen */
+    }
+
+    .left {
+        order: 2;
+        /* Show text section after iframe */
+        width: 100%;
+        /* Full width on mobile */
+        height: auto;
+        /* Adjust height dynamically */
+        padding: 20px;
+        /* Add padding for spacing */
+    }
+
+    h1 {
+        font-size: 24px;
+        /* Smaller font size for mobile */
+        margin-bottom: 10px;
+    }
+
+    iframe {
+        height: 100vh;
+        margin-bottom: 90px;
+        /* Ensure iframe takes full screen height */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+        /* Further reduce font size for smaller devices */
+    }
+}
